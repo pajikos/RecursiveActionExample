@@ -178,7 +178,7 @@ class SimpleProcessor implements PrimeNumberProcessor {
 	public Set<Integer> process(int limit) {
 		Set<Integer> data = new LinkedHashSet<Integer>();
 		for (int i = 0; i < limit; i++) {
-			if (PrimeUtil.isPrime(i)) {
+			if (PrimeNumberUtil.isPrime(i)) {
 				data.add(i);
 			}
 		}
