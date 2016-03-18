@@ -13,7 +13,6 @@ import java.util.concurrent.RecursiveAction;
 class PrimeRecursiveAction extends RecursiveAction {
 
 	private static final long serialVersionUID = -7792426435156607324L;
-
 	private int threshold;
 	private Set<Integer> data;
 	private int start;
@@ -26,7 +25,7 @@ class PrimeRecursiveAction extends RecursiveAction {
 		this.end = end; // end of processing
 		this.threshold = threshold;
 	}
-
+	
 	@Override
 	protected void compute() {
 		if (end - start <= threshold) { // Am I able to process it alone?

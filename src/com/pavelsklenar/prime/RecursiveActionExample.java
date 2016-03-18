@@ -1,7 +1,12 @@
 package com.pavelsklenar.prime;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ForkJoinPool;
@@ -18,7 +23,7 @@ public class RecursiveActionExample {
 
 	private static final Logger LOG = Logger.getLogger(RecursiveActionExample.class.getName());
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		if (args.length < 2) {
 			exit("At least type of processor and limit must be specified.");
 		} else {
@@ -52,7 +57,6 @@ public class RecursiveActionExample {
 		LOG.info("" + ((endTime - startTime) / 1000_000f) + " millis.");
 		LOG.info(String.format("Found %s prime numbers with limit %s in %.3f seconds.", result.size(), inputLimit,
 				(endTime - startTime) / 1000_000_000f));
-
 	}
 
 	/**
